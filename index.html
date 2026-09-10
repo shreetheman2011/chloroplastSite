@@ -959,8 +959,28 @@ footer strong{color:var(--paper);}
           <p class="note">Select one candidate for Cell Organelle of the Year.</p>
           <form id="ballotForm">
             <label class="ballot-option">
+              <input type="radio" name="candidate" value="cellwall">
+              <span><span class="oname">Cell Wall</span><span class="otag">Structural integrity ticket</span></span>
+            </label>
+            <label class="ballot-option">
               <input type="radio" name="candidate" value="chloroplast" checked>
               <span><span class="oname">Chloroplast</span><span class="otag">We&apos;re the creators. They&apos;re the consumers</span></span>
+            </label>
+            <label class="ballot-option">
+              <input type="radio" name="candidate" value="cytoskeleton">
+              <span><span class="oname">Cytoskeleton</span><span class="otag">Mobility &amp; infrastructure caucus, cilia and flagella included</span></span>
+            </label>
+            <label class="ballot-option">
+              <input type="radio" name="candidate" value="cytoplasm">
+              <span><span class="oname">Cytoplasm</span><span class="otag">The grassroots filler party</span></span>
+            </label>
+            <label class="ballot-option">
+              <input type="radio" name="candidate" value="golgi">
+              <span><span class="oname">Golgi Body</span><span class="otag">Shipping &amp; logistics platform</span></span>
+            </label>
+            <label class="ballot-option">
+              <input type="radio" name="candidate" value="lysosomes">
+              <span><span class="oname">Lysosomes</span><span class="otag">Cleanup &amp; waste management bloc</span></span>
             </label>
             <label class="ballot-option">
               <input type="radio" name="candidate" value="mitochondria">
@@ -971,12 +991,16 @@ footer strong{color:var(--paper);}
               <span><span class="oname">Nucleus</span><span class="otag">Establishment control candidate</span></span>
             </label>
             <label class="ballot-option">
-              <input type="radio" name="candidate" value="golgi">
-              <span><span class="oname">Golgi Apparatus</span><span class="otag">Shipping &amp; logistics platform</span></span>
+              <input type="radio" name="candidate" value="plasmamembrane">
+              <span><span class="oname">Plasma Membrane / Cell Membrane</span><span class="otag">Border security independent</span></span>
             </label>
             <label class="ballot-option">
               <input type="radio" name="candidate" value="ribosome">
               <span><span class="oname">Ribosome</span><span class="otag">Independent, protein-building bloc</span></span>
+            </label>
+            <label class="ballot-option">
+              <input type="radio" name="candidate" value="er">
+              <span><span class="oname">Smooth &amp; Rough ER</span><span class="otag">Manufacturing &amp; transport coalition</span></span>
             </label>
             <label class="ballot-option">
               <input type="radio" name="candidate" value="vacuole">
@@ -1200,9 +1224,9 @@ footer strong{color:var(--paper);}
 
   /* ---------- VOTING (synced across devices via a free public counter API, no database to run) ---------- */
   var VOTE_NAMESPACE = 'chloroplast-organelle-election-2026';
-  var CANDIDATE_KEYS = ['chloroplast','mitochondria','nucleus','golgi','ribosome','vacuole'];
-  var tally = { chloroplast: 0, mitochondria: 0, nucleus: 0, golgi: 0, ribosome: 0, vacuole: 0 };
-  var names = { chloroplast: "Chloroplast", mitochondria: "Mitochondria", nucleus: "Nucleus", golgi: "Golgi Apparatus", ribosome: "Ribosome", vacuole: "Vacuole" };
+  var CANDIDATE_KEYS = ['cellwall','chloroplast','cytoskeleton','cytoplasm','golgi','lysosomes','mitochondria','nucleus','plasmamembrane','ribosome','er','vacuole'];
+  var tally = { cellwall: 0, chloroplast: 0, cytoskeleton: 0, cytoplasm: 0, golgi: 0, lysosomes: 0, mitochondria: 0, nucleus: 0, plasmamembrane: 0, ribosome: 0, er: 0, vacuole: 0 };
+  var names = { cellwall: "Cell Wall", chloroplast: "Chloroplast", cytoskeleton: "Cytoskeleton", cytoplasm: "Cytoplasm", golgi: "Golgi Body", lysosomes: "Lysosomes", mitochondria: "Mitochondria", nucleus: "Nucleus", plasmamembrane: "Plasma Membrane", ribosome: "Ribosome", er: "Smooth & Rough ER", vacuole: "Vacuole" };
   var barChart = document.getElementById('barChart');
   var voteToast = document.getElementById('voteToast');
   var syncNote = document.getElementById('syncNote');
